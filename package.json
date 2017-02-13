@@ -1,0 +1,28 @@
+{
+  "name": "vue-project-api",
+  "version": "1.0.1",
+  "description": "Provide API for vue-project",
+  "main": "app.js",
+  "scripts": {
+    "server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klxq/vue-project-api.git"
+  },
+  "keywords": [
+    "vue",
+    "api",
+    "docker"
+  ],
+  "author": "klxq",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klxq/vue-project-api/issues"
+  },
+  "homepage": "https://github.com/klxq/vue-project-api#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "mongodb": "^2.2.23"
+  }
+}
