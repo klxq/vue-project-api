@@ -32,14 +32,13 @@ RUN apt-get update \
   && ln -s /usr/local/bin/node /usr/local/bin/nodejs \
   && apt-get purge -y --auto-remove curl xz-utils
 
-# for API port
-EXPOSE 3000
+EXPOSE 3000 27017
 
 COPY . /app
 
 WORKDIR /app
 
 RUN npm i \
-  && mongod --fork --logpath=./mongo.log
+  && chmod 755 ./entrypoint.sh
 
-CMD ["npm", "run server"]
+ENTRYPOINT ["./entrypoint.sh"]
