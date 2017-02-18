@@ -44,6 +44,18 @@ exports.findDetailByID = function(req, res) {
   });
 };
 
+exports.editDetailByID = function(req, res) {
+  var item = req.body;
+  db.collection(COLLECTION_DETAIL, function(err, collection) {
+    collection.update({id:item.id}, item, null, function(err, result) {
+      if(!err) {
+        res.send(result);
+      } else {
+        res.send(err);
+      }
+    });
+  });
+};
 
 // initial default DB
 var initialDB = function() {

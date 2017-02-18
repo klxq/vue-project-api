@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 
 app.get('/films', db.findAllFilms);
 app.get('/films/:id', db.findDetailByID);
+app.post('/films/:id', db.editDetailByID);
 
 app.listen(3000, function() {
   console.log('Listening on port 3000 ...')
