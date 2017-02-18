@@ -47,11 +47,12 @@ exports.findDetailByID = function(req, res) {
 exports.editDetailByID = function(req, res) {
   var item = req.body;
   db.collection(COLLECTION_DETAIL, function(err, collection) {
+    delete item["_id"]
     collection.update({id:item.id}, item, null, function(err, result) {
       if(!err) {
-        res.send(result);
+        res.json({"status": true});
       } else {
-        res.send(err);
+        res.error(501, err);
       }
     });
   });
